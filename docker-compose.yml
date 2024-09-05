@@ -30,8 +30,8 @@ services:
     container_name: backend
     volumes:
       - /app/node_modules # Inside the container, don't try to override this folder, just leave as is
-    # env_file:
-    #   - ./env/backend.env
+    env_file:
+      - ./env/backend.env
   mongo:
     image: 'mongo'
     container_name: 'mongo-db'
@@ -40,5 +40,5 @@ services:
     volumes: 
       - ./db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
       - ./db/mongo-volume:/data/db
-    # env_file:
-    #   - ./env/mongo.env
+    env_file:
+      - ./env/mongo.env
