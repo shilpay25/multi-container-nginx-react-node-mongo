@@ -1,4 +1,4 @@
-ROM node:latest
+FROM node:latest
 
 WORKDIR /usr/local/bin
 
